@@ -1,0 +1,43 @@
+usuarios = []
+
+while True:
+    print("\n=== SISTEMA DE CADASTRO ===")
+    print("1 - Cadastrar usuário")
+    print("2 - Listar usuários")
+    print("3 - Buscar usuário")
+    print("4 - Excluir usuário")
+    print("5 - Sair")
+
+    opcao = input("Escolha uma opção: ")
+
+    if opcao == "1":
+        nome = input("Digite o nome: ")
+        usuarios.append(nome)
+        print("Usuário cadastrado!")
+
+    elif opcao == "2":
+        print("\nUsuários cadastrados:")
+        for u in usuarios:
+            print(u)
+
+    elif opcao == "3":
+        busca = input("Digite o nome para buscar: ")
+        if busca in usuarios:
+            print("Usuário encontrado!")
+        else:
+            print("Usuário não encontrado.")
+
+    elif opcao == "4":
+        remover = input("Digite o nome para remover: ")
+        if remover in usuarios:
+            usuarios.remove(remover)
+            print("Usuário removido.")
+        else:
+            print("Usuário não encontrado.")
+
+    elif opcao == "5":
+        print("Saindo...")
+        break
+
+    else:
+        print("Opção inválida.")
